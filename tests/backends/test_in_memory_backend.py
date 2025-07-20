@@ -3,7 +3,6 @@ from src.tiered_cache.backends import InMemoryBackend
 
 class TestInMemoryBackend:
     def setup_method(self):
-        InMemoryBackend.cache = {}
         self.backend = InMemoryBackend()
 
     def test_set_string_input_stores_value(self):
