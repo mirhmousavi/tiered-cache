@@ -1,0 +1,28 @@
+[project]
+name = "tiered-cache"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Mirhossein Mousavi", email = "mirhossein.mousavi@sendcloud.com"},
+]
+dependencies = ["redis>=6.2.0"]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.scripts]
+lint = "mypy src && ruff check ."
+format = "ruff format"
+test = "pytest"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17.0",
+    "pytest>=8.4.1",
+    "ruff>=0.12.4",
+]
+
