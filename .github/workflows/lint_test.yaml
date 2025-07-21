@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  build-lint-test:
+  lint-test:
     runs-on: ubunte-latest
     steps:
       - uses: actions/checkout@v4
