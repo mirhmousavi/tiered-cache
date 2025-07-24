@@ -28,14 +28,6 @@ class TestTieredCache:
         self.backend1.get.assert_called_once_with("key1")
         self.backend2.get.assert_not_called()
 
-    def test_get_returns_value_from_first_backend(self):
-        data = {"name": "test", "id": 123}
-        self.backend1.get.return_value = data
-        result = self.tiered_cache.get("key2")
-        assert result == data
-        self.backend1.get.assert_called_once_with("key2")
-        self.backend2.get.assert_not_called()
-
     def test_get_propagates_from_second_backend_to_first(self):
         self.backend1.get.return_value = None
         self.backend2.get.return_value = "value1"

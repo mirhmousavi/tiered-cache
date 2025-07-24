@@ -3,8 +3,6 @@ from unittest.mock import Mock
 from src.tiered_cache.backends import RedisBackend
 import pytest
 from src.tiered_cache.models import CacheItem
-from dataclasses import asdict
-from unittest.mock import patch
 
 
 class TestRedisBackend:

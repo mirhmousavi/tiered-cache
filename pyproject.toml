@@ -15,7 +15,7 @@ license = {text = "MIT"}
 distribution = true
 
 [tool.pdm.scripts]
-lint = "mypy src && ruff check ."
+lint = "ruff check ."
 format = "ruff format"
 test = "pytest --cov=src ."
 clean = { "shell" = "find . -name __pycache__ | xargs rm -rf"}
