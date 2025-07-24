@@ -3,7 +3,7 @@ name = "tiered-cache"
 version = "0.1.0"
 description = "Default template for PDM package"
 authors = [
-    {name = "Mirhossein Mousavi", email = "mirhossein.mousavi@sendcloud.com"},
+    {name = "Mirhossein Mousavi", email = "mr.mousavi@live.com"},
 ]
 dependencies = ["redis>=6.2.0"]
 requires-python = "==3.13.*"
@@ -17,12 +17,14 @@ distribution = true
 [tool.pdm.scripts]
 lint = "mypy src && ruff check ."
 format = "ruff format"
-test = "pytest"
+test = "pytest --cov=src ."
+clean = { "shell" = "find . -name __pycache__ | xargs rm -rf"}
 
 [dependency-groups]
 dev = [
     "mypy>=1.17.0",
     "pytest>=8.4.1",
     "ruff>=0.12.4",
+    "pytest-cov>=6.2.1",
 ]
 
